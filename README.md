@@ -20,7 +20,7 @@
 |password|string|null: false|
 
 ### Association
-- has_many :group, through: :groups_users
+- has_many :groups, through: :groups_users
 - has_many :groups_users
 - has_many :messages
 
@@ -28,12 +28,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, add_index :group, :group_name, unique: true|
-|member_name|string| |
-|user_id|integer|null: false|
+|name|string|null: false, add_index :group, :name, unique: true|
 
 ### Association
-- has_many :user, through: :groups_users
+- has_many :users, through: :groups_users
 - has_many :groups_users
 - has_many :messages
 
