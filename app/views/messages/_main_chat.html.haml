@@ -1,0 +1,24 @@
+.Chat-main
+  .Chat-main__info
+    .Chat-main__info__chat-user
+      .Chat-main__info__chat-user__chat-name test
+      %ul.Chat-main__info__chat-user__chat-member
+        Member: 
+        %li.Chat-main__info__chat-user__member-name KEI
+    %a.Chat-main__info__chat-user__edit{:href => '#'} Edit
+    
+  .Chat-main__message-list
+    .Chat-main__message-list__message-box
+      .Chat-main__message-list__message-box__message-name
+        .Chat-main__message-list__message-box__message-name__user-name KEI
+        .Chat-main__message-list__message-box__message-name__time 2020年07月13日 11時16分
+      .Chat-main__message-list__message-box__message-word おはよう
+
+  .Chat-main__message-form
+    %form.form-box
+      .form-box__form-contents
+        %input.form-box__form-contents__text-box{"placeholder": "type a message", "type": "text"}
+        %label.form-box__form-contents__image
+          = icon('fas', 'image')
+          %input.file{type: "file"}
+      %input.form-box__submitBtn{"type": "submit", "value": "Send"}
