@@ -5,7 +5,7 @@
 .wrapper{
   display: flex;
 }
-/*サイドバー*/
+
 .Side-bar{
   background-color: #253141;
   width: 300px;
@@ -56,8 +56,7 @@
       }
   }
 }
-/*メインチャット*/
- /*チャットインフォの実装*/
+
 .Chat-main{
   background-color: #ffffff;
   width: calc( 100vw - 300px );
@@ -94,7 +93,7 @@
     }
   }
 
- /*メッセージリストの実装*/
+ 
   &__message-list{
     background-color: #fafafa;
     height: calc(100vh - 90px);
@@ -121,7 +120,7 @@
     }
   }
 
- /*フォームの実装*/
+
   &__message-form{
     background-color: #d2d2d2;
     height: 90px;
