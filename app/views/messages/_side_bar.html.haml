@@ -1,14 +1,15 @@
 .Side-bar
   .Side-bar__user
     .Side-bar__user__top-items
-      %h2.Side-bar__user__top-items__name KEITA
+      %h2.Side-bar__user__top-items__name
+        = current_user.name
 
       .Side-bar__user__top-items__icons
         .Side-bar__user__top-items__icons__btn-icon
           = link_to "#", class: "" do
             = icon('fas','edit')
         .Side-bar__user__top-items__icons__btn-icon
-          = link_to "#", class: "" do
+          = link_to edit_user_path(current_user), class: "" do
             = icon('fas','cog')
         -# = icon('fas','fa-edit',class: "Side-bar__user__top-items__btn--icon")
         -# = link_to "#", class: "Side-bar__user__top-items__icons" do

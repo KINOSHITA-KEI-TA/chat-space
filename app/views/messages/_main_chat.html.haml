@@ -15,10 +15,10 @@
       .Chat-main__message-list__message-box__message-word おはよう
 
   .Chat-main__message-form
-    %form.form-box
-      .form-box__form-contents
-        %input.form-box__form-contents__text-box{"placeholder": "type a message", "type": "text"}
-        %label.form-box__form-contents__image
+    %form.Form-box
+      .Form-box__form-contents
+        %input.Form-box__form-contents__text-box{"placeholder": "type a message", "type": "text"}
+        %label.Form-box__form-contents__image
           = icon('fas', 'image')
-          %input.file{type: "file"}
-      %input.form-box__submitBtn{"type": "submit", "value": "Send"}
+          %input.File{type: "file"}
+      %input.Form-box__submitBtn{"type": "submit", "value": "Send"}
