@@ -6,7 +6,7 @@
 
       .Side-bar__user__top-items__icons
         .Side-bar__user__top-items__icons__btn-icon
-          = link_to "#", class: "" do
+          = link_to new_group_path(current_user), class: "" do
             = icon('fas','edit')
         .Side-bar__user__top-items__icons__btn-icon
           = link_to edit_user_path(current_user), class: "" do
@@ -16,10 +16,10 @@
         -# = icon('fas','fa-cog',class: "Side-bar__user__top-items__btn--icon")
         -# = link_to "#", class: "Side-bar__user__top-items__icons" do
   .Side-bar__group-list
-    .Side-bar__group-list__group
-      .Side-bar__group-list__group__group-name KEI
-      .Side-bar__group-list__group__group-message まだメッセージはありません。
-    .Side-bar__group-list__group
-      .Side-bar__group-list__group__group-name KEI
-      .Side-bar__group-list__group__group-message まだメッセージはありません。
-
+    - current_user.groups.each do |group|
+      .Side-bar__group-list__group
+        = link_to '#' do
+          .Side-bar__group-list__group__group-name
+            = group.name
+          .Side-bar__group-list__group__group-message 
+            メッセージはまだありません
