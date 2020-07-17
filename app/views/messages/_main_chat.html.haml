@@ -1,24 +1,25 @@
 .Chat-main
   .Chat-main__info
     .Chat-main__info__chat-user
-      .Chat-main__info__chat-user__chat-name test
-      %ul.Chat-main__info__chat-user__chat-member
-        Member: 
-        %li.Chat-main__info__chat-user__member-name KEI
-    %a.Chat-main__info__chat-user__edit{:href => '#'} Edit
-    
+      .Chat-main__info__chat-user__chat-name
+        = @group.name
+        %ul.Chat-main__info__chat-user__chat-member
+          Member: 
+          %li.Chat-main__info__chat-user__member-name
+          - @group.users.each do |user|
+            = user.name
+    = link_to edit_group_path(@group.id),class:"Chat-main__info__chat-user__edit" do
+      Edit
+ 
   .Chat-main__message-list
-    .Chat-main__message-list__message-box
-      .Chat-main__message-list__message-box__message-name
-        .Chat-main__message-list__message-box__message-name__user-name KEI
-        .Chat-main__message-list__message-box__message-name__time 2020年07月13日 11時16分
-      .Chat-main__message-list__message-box__message-word おはよう
+    = render @messages
+
 
   .Chat-main__message-form
-    %form.Form-box
+    = form_with model: [@group, @message], html: {class: "Form-box"}, local: true do |f|
       .Form-box__form-contents
-        %input.Form-box__form-contents__text-box{"placeholder": "type a message", "type": "text"}
-        %label.Form-box__form-contents__image
-          = icon('fas', 'image')
-          %input.File{type: "file"}
-      %input.Form-box__submitBtn{"type": "submit", "value": "Send"}
+        = f.text_field :text, class: 'Form-box__form-contents__text-box', placeholder: 'type a message'
+        = f.label :image, class: 'Form-box__form-contents__image' do
+          = icon('far', 'image', class: '')
+          = f.file_field :image, class: 'File'
+        = f.submit 'Send', class: 'Form-box__submitBtn'

@@ -11,15 +11,12 @@
         .Side-bar__user__top-items__icons__btn-icon
           = link_to edit_user_path(current_user), class: "" do
             = icon('fas','cog')
-        -# = icon('fas','fa-edit',class: "Side-bar__user__top-items__btn--icon")
-        -# = link_to "#", class: "Side-bar__user__top-items__icons" do
-        -# = icon('fas','fa-cog',class: "Side-bar__user__top-items__btn--icon")
-        -# = link_to "#", class: "Side-bar__user__top-items__icons" do
+       
   .Side-bar__group-list
     - current_user.groups.each do |group|
       .Side-bar__group-list__group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Side-bar__group-list__group__group-name
             = group.name
           .Side-bar__group-list__group__group-message 
-            メッセージはまだありません
+            = group.show_last_message
