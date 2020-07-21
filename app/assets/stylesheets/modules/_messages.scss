@@ -3,6 +3,8 @@
 }
 
 .wrapper{
+  width: 100vw;
+  height: 100vh;
   display: flex;
 }
 
@@ -60,6 +62,7 @@
 .Chat-main{
   background-color: #ffffff;
   width: calc( 100vw - 300px );
+  height: 100vh;
   &__info{
     background-color: #ffffff;
     border-bottom: solid 1px #eeeeee;
@@ -98,6 +101,7 @@
     background-color: #fafafa;
     height: calc(100vh - 90px);
     padding: 35px 40px 0px;
+    overflow: scroll;
     &__message-box{
       margin-bottom: 46px;
       &__message-name{
